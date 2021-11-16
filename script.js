@@ -7,7 +7,7 @@ const clearStudentsBtn = document.querySelector("#clear-students");
 const tbody = document.querySelector("#Students");
 const loading = document.querySelector("#loading");
 const table = document.querySelector(".table");
-
+const ui = new UI();
 const showLoading = () =>{
     loading.style.display = "block";
 }
@@ -23,7 +23,9 @@ window.addEventListener("DOMContentLoaded", () => {
     clearStudentsBtn.addEventListener("click", clearAllStudents);
 });
 
-const addNewStudent = () =>{
+const addNewStudent = (e) =>{
+    e.preventDefault();
+    showLoading();
     const imageUrl = _url.value.trim();
     const studentName = _name.value.trim();
     const studentPath = _path.value.trim();
@@ -32,10 +34,16 @@ const addNewStudent = () =>{
     }
     else{
         // const student = {};
-        const student = new Object();
+        const studentObj = new Student(imageUrl, studentName, studentPath);
+
+        // addStudentToUI func.
+        ui.addStudentToUI(studentObj);
+        // infoMessage func.
+        ui.clearInputs([_url, _name, _path]);
 
     }
 
+    removeLoading();
 }
 
 const clearAllStudents = () =>{
