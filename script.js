@@ -8,3 +8,17 @@ const tbody = document.querySelector("#Students");
 const loading = document.querySelector("#loading");
 const table = document.querySelector(".table");
 
+const showLoading = () =>{
+    loading.style.display = "block";
+}
+
+const removeLoading = () =>{
+    setTimeout(()=>{
+        loading.style.display = "none";
+    }, 1000);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    addButton.addEventListener("click", addNewStudent);
+    clearStudentsBtn.addEventListener("");
+});
