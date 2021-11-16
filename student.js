@@ -12,3 +12,8 @@ function Student(imageUrl, studentName, studentPath){
     console.log(this);
 }
 
+const std = new Student("url", "Ryan", "Fullstack");
+const std2 = new Student("url", "Daniel", "AWS");
+
+console.log(std);
+console.log(std2);
