@@ -20,5 +20,24 @@ const removeLoading = () =>{
 
 window.addEventListener("DOMContentLoaded", () => {
     addButton.addEventListener("click", addNewStudent);
-    clearStudentsBtn.addEventListener("");
+    clearStudentsBtn.addEventListener("click", clearAllStudents);
 });
+
+const addNewStudent = () =>{
+    const imageUrl = _url.value.trim();
+    const studentName = _name.value.trim();
+    const studentPath = _path.value.trim();
+    if (imageUrl === "" || studentName === "" || studentPath === "") {
+        confirm("please enter students' info!");
+    }
+    else{
+        // const student = {};
+        const student = new Object();
+
+    }
+
+}
+
+const clearAllStudents = () =>{
+
+}
